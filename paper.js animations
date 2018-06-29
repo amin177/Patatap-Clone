@@ -1,0 +1,153 @@
+
+Paper.js
+
+    About
+    Features
+    Examples
+    Showcase
+    Tutorials
+    Reference
+    Sketch
+    Download
+    Donation
+    License
+    Mailing List
+    Follow on Twitter
+    Watch on Github
+
+Creating Predefined Shapes
+
+Paper.js allows you to create path items with predefined shapes of variable dimensions.
+
+In the same way that the new Path() constructor creates an empty path with no points, we have constructors such as new Path.Circle(center, radius) and new Path.Rectangle(point, size) that create paths and automatically add segments to them to create predefined shapes.
+Paper.js allows you to create path items with predefined shapes of variable dimensions.
+Circle Shaped Paths
+
+Using the new Path.Circle(center, radius) constructor, we can produces circle shaped paths.
+
+The following code produces a circle shaped path with a center point at {x: 100, y: 70} and a radius of 50 pt:
+Run
+
+1
+
+2
+
+var myCircle = new Path.Circle(new Point(100, 70), 50);
+
+myCircle.fillColor = 'black';
+
+Rectangular Shaped Paths
+
+To create a rectangular shaped path you can pass a Rectangle to the new Path.Rectangle(rect) constructor.
+Please note:
+
+A Rectangle object is an abstract representation of a rectangle. Please read the Point, Size and Rectangle tutorial to find out how to work with the Rectangle object.
+
+For example, let's make a Rectangle between {x: 0, y: 0} and {x: 50, y: 50} and then use the new Path.Rectangle(rect) constructor to create a path with the shape that it describes:
+
+1
+
+2
+
+3
+
+4
+
+var rectangle = new Rectangle(new Point(50, 50), new Point(150, 100));
+
+var path = new Path.Rectangle(rectangle);
+
+path.fillColor = '#e9e9ff';
+
+path.selected = true;
+
+Rectangular Shaped Paths with Rounded Corners
+
+To create rectangular shaped paths with rounded corners, we use the new Path.RoundedRectangle(rect, size) constructor. The rect parameter describes the Rectangle and the size parameter describes the Size of the rounded corners.
+
+For example, the following script creates a rectangular shaped path with 20 pt * 20 pt corners:
+
+1
+
+2
+
+3
+
+4
+
+var rectangle = new Rectangle(new Point(50, 50), new Point(150, 100));
+
+var cornerSize = new Size(20, 20);
+
+var path = new Path.RoundRectangle(rectangle, cornerSize);
+
+path.fillColor = 'black';
+
+Regular Polygon Shaped Paths
+
+To create regular polygon shaped paths, we use the new Path.RegularPolygon(center, numSides, radius) constructor.
+
+The center parameter describes the center point of the polygon, the numSides parameter describes the amount of sides the polygon has and the radius parameter describes the radius of the polygon.
+
+For example, lets create a triangle shaped path and a decagon shaped path:
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+// Create a triangle shaped path 
+
+var triangle = new Path.RegularPolygon(new Point(80, 70), 3, 50);
+
+triangle.fillColor = '#e9e9ff';
+
+triangle.selected = true;
+
+ 
+
+// Create a decagon shaped path 
+
+var decagon = new Path.RegularPolygon(new Point(200, 70), 10, 50);
+
+decagon.fillColor = '#e9e9ff';
+
+decagon.selected = true;
+
+Did you know?
+
+You can check the constructors section of the Path reference for a full list of Path constructors.
+Index
+
+    Getting Started
+    Geometry
+    Paths
+        Working with Path Items
+        Creating Predefined Shapes
+        Using Color and Style
+        Smoothing, Simplifying & Flattening
+    Interaction
+    Project & Items
+    Images
+    Animation
+
+Content
+
+    Circle Shaped Paths
+    Rectangular Shaped Paths
+    Rounded Rectangles
+    Regular Polygon Shaped Paths
+
